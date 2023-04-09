@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="box-element">
+
+    <h2 style="color: #14365d">User Login</h2>
+    <hr>
+    <br>
+<form method="post">
+    {% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" class="btn btn-primary">
+</form>
+<p>Don't have an account? <a href="/signup">SignUp Here</a></p>
+
+</div>
+{% endblock %}

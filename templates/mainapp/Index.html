@@ -1,0 +1,64 @@
+{% extends 'mainapp/base.html' %} {% block title %}{{ user.username }} 
+{% load static %} {% endblock %} {% block content %}
+<div class="container">
+  <div>
+    {% for i in data %}
+    <div class="card margins">
+      <div class="card-header" style="display: flex;">
+        <div>
+          {% for j in pict %}
+          {% if j.user.id == i.author.id %}
+
+          <img
+            src="{% get_media_prefix %}{{ j.pic }}"
+            class="avatar-circle"
+            alt="Avatar"
+          />
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="username">@{{ i.author.username }}</div>
+
+      </div>
+
+      <div class="card-body">
+        <h3 class="card-title">{{ i.title }}</h3>
+        <p class="card-text">{{ i.description }}</p>
+        {% if user == i.author or user.is_superuser or perms.mainapp.delete_postmodel %}
+        <form method="post">
+          {% csrf_token %}
+          <button
+            type="submit"
+            name="postid"
+            value="{{ i.id }}"
+            class="btn btn-danger"
+          >
+            Delete
+          </button>
+        </form>
+        {% endif %} 
+        {% if not i.author.id == user.id %} 
+        {% if user.is_superuser %}
+        <form method="post">
+          {% csrf_token %}
+          <button
+            type="submit"
+            name="userid"
+            value="{{ i.author.id }}"
+            class="btn btn-warning"
+          >
+            Ban User
+          </button>
+        </form>
+        {% endif %} {% endif %}
+        <div class="card-footer" style="font-size: 12px">
+          {{ i.created_at }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

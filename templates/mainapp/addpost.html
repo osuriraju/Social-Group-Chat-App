@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+<div class="box-element" style="margin-top: 5%!important;">
+    <h2 style="color: #14365d">ADD POST</h2>
+    <hr><br>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <label>Title : </label><br>
+        {{ form.title }}
+        <br><br>
+        <label>Description : </label><br>
+        {{ form.description }}
+        <br><br>
+        <input type="submit" value="Add Post" class="btn btn-primary">
+    </form>
+</div>
+</div>
+
+{% endblock %}

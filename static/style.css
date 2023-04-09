@@ -1,0 +1,63 @@
+body{
+    background-color: #94b6ff;
+}
+
+.bg-dark{
+    background-color: #14365d!important;
+}
+
+.card-header{
+    background-color: #4f8ce0!important;
+}
+.card-body{
+    background-color: #7f94c6!important;
+}
+.username{
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.margins{
+    width: 900px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.avatar-circle{
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px white;
+}
+
+.profile-circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(128, 128, 128);
+    margin: 5%;
+}
+
+.box-element{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 1px 5px gray;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    padding: 50px;
+    padding-top: 20px;
+}
+
+.imginput{
+    border-radius: 10px;
+    background-color: gray;
+    margin: 5% 2%;
+    
+}
+
